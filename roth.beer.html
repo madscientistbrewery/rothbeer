@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rothbeer</title>
+  <style>
+    /* CSS stílusok */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: #ffcc00ff;
+    }
+    .container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin:
+    }
+    .header {
+      width: 100%;
+      height: 100vh;
+      background-image: url('rothbeer.svg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .beer-item {
+      width: 100%;
+      height: 75vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 0;
+      margin: 0;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: max(30px, 8vw);
+    }
+    .align-right {
+      align-items: flex-end;
+      text-align: right;
+      padding-left: 0;
+      padding-right: max(30px, 8vw);
+    }
+    .section-title {
+      font-size: max(24px, min(6vw, 6vh));
+      font-weight: 1000; /* Még vastagabb betűk */
+      margin-bottom: 10px;
+      color: white;
+      text-transform: uppercase;
+    }
+    .beer-item p {
+      font-size: max(12px, min(2vw, 2vh));
+      font-weight: 700;
+      color: white; /* Fehér szöveg */
+      text-transform: uppercase; /* Kapitális betűk */
+      max-width: min(50%, 500px);
+    }
+    .footer {
+      width: 100%;
+      height: 100vh; /* Magasság 100% az ablakmagasságból */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .footer .button {
+      padding: 15px 30px;
+      background-color: #ffaa00; /* Pásztelesebb szín */
+      color: white;
+      border-radius: 8px;
+      font-size: max(24px, min(6vw, 6vh));
+      font-weight: 1000;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+    }
+    .footer .button:hover {
+      background-color: #ffcc00; /* Színváltozás hover állapotban */
+    }
+    .footer p {
+      margin-top: 20px; /* Távolság a gombtól */
+      font-size: max(12px, min(2vw, 2vh));
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header"></div>
+
+<div class="container">
+  <div class="beer-item align-right" style="background-image: url('tavoli-galaxis.svg');">
+    <h2 class="section-title">Távoli Galaxis</h2>
+    <p>A Távoli Galaxis az IPA sörök szárazabb, könnyedebb irányvonalának képviselője. Nevét, valamint citrusos, trópusi gyümölcsökre emlékeztető egyedi aromáját az ausztrál Galaxy komlónak köszönheti. 2012 Grand Champion díjas söre.</p>
+    <p>Intergalactic IPA</p>
+    <p>Alc. 6,1% V/V</p>
+  </div>
+  <div class="beer-item" style="background-image: url('pyromania.svg');">
+    <h2 class="section-title">Pyromania</h2>
+    <p>A Pyromania Roth Zoli egyik igazi klasszikusa. Egyéniség a javából. Nehezen bekategorizálható, mert valahol a klasszikus angol porter és a német bock között helyezkedik el. Testes, malátás, füstös barna sör, amit a tradicionális ízek és a modern sörök kedvelői egyarántélvezhetnek. Egy igazi kulináris kirándulás.</p>
+    <p>Smoked brown ale</p>
+    <p>Alc. 7,5% V/V</p>
+  </div>
+  <div class="beer-item" style="background-image: url('galaxy-lager.svg');">
+    <h2 class="section-title">Galaxy Lager</h2>
+    <p>Az univerzum rekreációs lágere. Ha "csak" egy hideg sört szeretnél, de azért adsz a kivitelezésre, akkor ez lehet a te választásod. A Távoli Galaxisból ismert ausztrál Galaxy komlót ez alkalommal egy kiegyensúlyozott, újhullámos Pils típusú sörbe álmodtuk bele.</p>
+    <p>Dry hopped pils</p>
+    <p>Alc. 5% V/V</p>
+  </div>
+  <div class="beer-item align-right" style="background-image: url('red-space.svg');">
+    <h2 class="section-title">Red Space</h2>
+    <p>A végtelen mélységek titkos ízei!</p>
+    <p>Sour cherry witbier</p>
+    <p>Alc. 5,7% V/V</p>
+  </div>
+  <div class="beer-item align-right" style="background-image: url('safe-space.svg');">
+    <h2 class="section-title">Safe Space</h2>
+    <p>A biztonságos zóna ízei!</p>
+    <p>Raspberry and lime session sour ale</p>
+    <p>Alc. 2% V/V</p>
+  </div>
+  <div class="footer">
+    <a class="button" href="https://madscientist.hu/termekkategoria/shop/vendegsorok/rothbeer/">Fedezd fel a söröket!</a>
+    <p>A sörök a Mad Scientist sörfőzdében készülnek</p>
+  </div>
+</div>
+
+</body>
+</html>
