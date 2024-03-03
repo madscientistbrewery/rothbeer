@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rothbeer</title>
+  <meta name="description" content="Kóstolja meg a Rothbeer kézműves söröket a Mad Scientist webshopban! Fedezze fel a legfrissebb ízeket és válogasson kedvére az egyedi sörök között.">
+  <title>Rothbeer - Kézműves sörök a Mad Scientist-től</title>
   <style>
-    /* CSS stílusok */
     body, html {
       margin: 0;
       padding: 0;
@@ -71,20 +71,23 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: #ffcc00ff
+      background: #ffcc00ff;
     }
-    .footer .button {
-      padding: 15px 30px;
+    .footer .button,
+    .overlay-content button {
+      padding: 15px;
       background-color: #ffaa00; /* Pásztelesebb szín */
       color: white;
       border-radius: 8px;
-      font-size: max(24px, min(6vw, 6vh));
+      border: 0;
+      font-size: max(20px, min(5vw, 5vh));
       font-weight: 1000;
       text-decoration: none;
       text-transform: uppercase;
       transition: background-color 0.3s ease;
     }
-    .footer .button:hover {
+    .footer .button:hover,
+    .overlay-content button:hover {
       background-color: #ffcc00; /* Színváltozás hover állapotban */
     }
     .footer p {
@@ -92,38 +95,85 @@
       font-size: max(12px, min(2vw, 2vh));
       color: white;
     }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Fekete, átlátszó háttér */
+      z-index: 9999; /* Biztosítsd, hogy az overlay a többi tartalom felett legyen */
+      display: none; /* Alapértelmezés szerint rejtve van */
+    }
+    .overlay-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffcc00;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .overlay-content p {
+      font-size: max(18px, min(5vw, 5vh));
+      font-weight: 800; /* Még vastagabb betűk */
+      margin-bottom: 10px;
+      color: white;
+      text-transform: uppercase;
+    }
+    .overlay-visible {
+      overflow: hidden;
+    }
   </style>
+  <script>
+    window.onload = function() {
+      document.getElementById("ageOverlay").style.display = "block";
+      document.body.classList.add("overlay-visible");
+    }
+    function redirectToVerification() {
+      window.location.href = "https://madscientist.hu/age-verification";
+    }
+    function verifyAge() {
+      document.getElementById("ageOverlay").style.display = "none";
+      document.body.classList.remove("overlay-visible");
+    }
+  </script>
 </head>
 <body>
-
+<div class="overlay" id="ageOverlay">
+  <div class="overlay-content">
+    <p>Elmúltál már 18 éves?</p>
+    <button onclick="redirectToVerification()">Nem</button>
+    <button onclick="verifyAge()">Igen</button>
+  </div>
+</div>
 <div class="header"></div>
-
 <div class="container">
-  <div class="beer-item align-right" style="background-image: url('tavoli-galaxis.svg');">
+  <div class="beer-item align-right" style="background-image: url('tavoli-galaxis.svg');" alt="Távoli Galaxis IPA sör">
     <h2 class="section-title">Távoli Galaxis</h2>
     <p>A Távoli Galaxis az IPA sörök szárazabb, könnyedebb irányvonalának képviselője. Nevét, valamint citrusos, trópusi gyümölcsökre emlékeztető egyedi aromáját az ausztrál Galaxy komlónak köszönheti. 2012 Grand Champion díjas söre.</p>
     <p>Intergalactic IPA</p>
     <p>Alc. 6,1% V/V</p>
   </div>
-  <div class="beer-item" style="background-image: url('pyromania.svg');">
+  <div class="beer-item" style="background-image: url('pyromania.svg');" alt="Pyromania füstös barna sör">
     <h2 class="section-title">Pyromania</h2>
     <p>A Pyromania Roth Zoli egyik igazi klasszikusa. Egyéniség a javából. Nehezen bekategorizálható, mert valahol a klasszikus angol porter és a német bock között helyezkedik el. Testes, malátás, füstös barna sör, amit a tradicionális ízek és a modern sörök kedvelői egyarántélvezhetnek. Egy igazi kulináris kirándulás.</p>
     <p>Smoked brown ale</p>
     <p>Alc. 7,5% V/V</p>
   </div>
-  <div class="beer-item" style="background-image: url('galaxy-lager.svg');">
+  <div class="beer-item" style="background-image: url('galaxy-lager.svg');" alt="Galaxy Lager hidegkomlós pilseni sör">
     <h2 class="section-title">Galaxy Lager</h2>
     <p>Az univerzum rekreációs lágere. Ha "csak" egy hideg sört szeretnél, de azért adsz a kivitelezésre, akkor ez lehet a te választásod. A Távoli Galaxisból ismert ausztrál Galaxy komlót ez alkalommal egy kiegyensúlyozott, újhullámos Pils típusú sörbe álmodtuk bele.</p>
     <p>Dry hopped pils</p>
     <p>Alc. 5% V/V</p>
   </div>
-  <div class="beer-item align-right" style="background-image: url('red-space.svg');">
+  <div class="beer-item align-right" style="background-image: url('red-space.svg');" alt="Red Space meggyes witbier">
     <h2 class="section-title">Red Space</h2>
     <p>A RED SPACE egy friss, meggyes belga búzasör, mely merész vörös színével és gyümölcsös ízjegyeivel egy űrutazást kínál minden kortyával. Egy könnyed, frissítő élmény, mely a belga witbier hagyományait ötvözi egy különleges, meggyes twisttel.</p>
     <p>Sour cherry witbier</p>
     <p>Alc. 5,7% V/V</p>
   </div>
-  <div class="beer-item align-right" style="background-image: url('safe-space.svg');">
+  <div class="beer-item align-right" style="background-image: url('safe-space.svg');" alt="Safe Space málnás-lime-os savanyú sör">
     <h2 class="section-title">Safe Space</h2>
     <p>A SAFE SPACE egy könnyed, alacsony alkoholtartalmú málnás-lime-os session sour ale, mely frissítő savanykás ízével és vibráló gyümölcsös aromáival egy biztonságos menedéket teremt minden kortyban. Ez a könnyed és felfrissítő sör ideális választás, hogy egy pillanatra kiszakadjunk a mindennapokból és élvezzük a könnyed, gyümölcsös élvezeteket.</p>
     <p>Raspberry and lime session sour ale</p>
@@ -131,8 +181,8 @@
   </div>
   <div class="footer">
     <a class="button" href="https://madscientist.hu/termekkategoria/shop/vendegsorok/rothbeer/">Tovább a Mad Scientist webshopra</a>
+    <p>A Rothbeer teljes kézműves sör kínálatához és a Mad Scientist kraft sörfőzde további söreihez.</p>
   </div>
 </div>
-
 </body>
 </html>
