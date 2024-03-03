@@ -73,8 +73,8 @@
       align-items: center;
       background: #ffcc00ff;
     }
-    .footer .button,
-    .overlay-content button {
+    .footer .button {
+      max-width: max(80%, 500px);
       padding: 15px;
       background-color: #ffaa00; /* Pásztelesebb szín */
       color: white;
@@ -84,6 +84,7 @@
       font-weight: 1000;
       text-decoration: none;
       text-transform: uppercase;
+      text-align: center;
       transition: background-color 0.3s ease;
     }
     .footer .button:hover,
@@ -114,10 +115,26 @@
       padding: 20px;
       border-radius: 8px;
     }
+    .overlay-content button {
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      background-color: #ffaa00; /* Pásztelesebb szín */
+      color: white;
+      border-radius: 8px;
+      border: 0;
+      margin-right: 20px;
+      margin-bottom: 8px;
+      font-size: max(12px, min(3vw, 3vh));
+      font-weight: 1000;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+    }
     .overlay-content p {
       font-size: max(18px, min(5vw, 5vh));
       font-weight: 800; /* Még vastagabb betűk */
-      margin-bottom: 10px;
       color: white;
       text-transform: uppercase;
     }
@@ -140,6 +157,7 @@
   </script>
 </head>
 <body>
+
 <div class="overlay" id="ageOverlay">
   <div class="overlay-content">
     <p>Elmúltál már 18 éves?</p>
@@ -147,7 +165,9 @@
     <button onclick="verifyAge()">Igen</button>
   </div>
 </div>
+
 <div class="header"></div>
+
 <div class="container">
   <div class="beer-item align-right" style="background-image: url('tavoli-galaxis.svg');" alt="Távoli Galaxis IPA sör">
     <h2 class="section-title">Távoli Galaxis</h2>
@@ -184,5 +204,6 @@
     <p>A Rothbeer teljes kézműves sör kínálatához és a Mad Scientist kraft sörfőzde további söreihez.</p>
   </div>
 </div>
+
 </body>
 </html>
